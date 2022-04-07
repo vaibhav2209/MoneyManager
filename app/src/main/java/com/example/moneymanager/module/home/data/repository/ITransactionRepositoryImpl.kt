@@ -2,6 +2,7 @@ package com.example.moneymanager.module.home.data.repository
 
 import android.util.Log
 import com.example.moneymanager.module.home.data.remote.FirestoreService
+import com.example.moneymanager.module.home.domain.model.Transaction
 import com.example.moneymanager.module.home.domain.repository.ITransactionRepository
 import com.example.moneymanager.utilities.ApiEndPoints
 import com.example.moneymanager.utilities.Constants
@@ -17,27 +18,62 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 class ITransactionRepositoryImpl @Inject constructor(
-    private val firestoreService: FirestoreService,
-    private val db: FirebaseFirestore
+    private val firestoreService: FirestoreService
 ) : ITransactionRepository {
 
     override fun getRecentTransactions(
         uId: String
     ): Flow<List<DocumentSnapshot>> = callbackFlow {
-        Log.d("Transactions", "repo -> ")
-        firestoreService.getRecentTransaction(uId)
+        firestoreService.getTransactions(uId)
             .orderBy(Constants.DATE, Query.Direction.DESCENDING)
             .limit(4)
             .get()
             .addOnSuccessListener {
                 it?.documents?.let { documents ->
-                    Log.d("Transactions", "Transactions -> $documents")
-                    Log.d("Transactions", "Transactions -> ${documents.first().data}")
                     trySend(documents)
                 }
 
             }.addOnFailureListener { e ->
-                Log.e("Transactions", "Transactions error -> ${e.message}")
+                cancel(
+                    message = e.message ?: Constants.UNKNOWN_ERROR,
+                    cause = e.cause
+                )
+            }
+        awaitClose { }
+    }
+
+    override fun getMonthlyTransactions(
+        uId: String,
+        month: String
+    ): Flow<List<DocumentSnapshot>> = callbackFlow {
+        firestoreService.getTransactions(uId)
+            .whereEqualTo(Constants.Month, month)
+            .get()
+            .addOnSuccessListener {
+                it?.documents?.let { documents ->
+                    trySend(documents)
+                }
+
+            }.addOnFailureListener { e ->
+                cancel(
+                    message = e.message ?: Constants.UNKNOWN_ERROR,
+                    cause = e.cause
+                )
+            }
+        awaitClose { }
+    }
+
+    override fun addTransaction(
+        uId: String,
+        transaction: Transaction
+    ): Flow<Boolean> = callbackFlow {
+        firestoreService.addTransactions(uId, transaction)
+            .addOnSuccessListener {
+                it?.let {
+                    trySend(true)
+                }
+
+            }.addOnFailureListener { e ->
                 cancel(
                     message = e.message ?: Constants.UNKNOWN_ERROR,
                     cause = e.cause

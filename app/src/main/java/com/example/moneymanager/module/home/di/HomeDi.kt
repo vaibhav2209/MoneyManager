@@ -3,7 +3,9 @@ package com.example.moneymanager.module.home.di
 import com.example.moneymanager.module.home.data.remote.FirestoreService
 import com.example.moneymanager.module.home.data.repository.ITransactionRepositoryImpl
 import com.example.moneymanager.module.home.domain.repository.ITransactionRepository
+import com.example.moneymanager.module.home.domain.use_cases.AddTransactionUseCase
 import com.example.moneymanager.module.home.domain.use_cases.RecentTransactionUseCase
+import com.example.moneymanager.module.home.domain.use_cases.MonthlyTransactionUseCase
 import com.example.moneymanager.module.home.domain.use_cases.TransactionUseCases
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -24,12 +26,14 @@ object HomeDi {
     fun provideFirestoreService(db : FirebaseFirestore) : FirestoreService = FirestoreService(db)
 
     @Provides
-    fun provideTransactionRepo(firestoreService: FirestoreService, db: FirebaseFirestore) : ITransactionRepository =
-        ITransactionRepositoryImpl(firestoreService, db) as ITransactionRepository
+    fun provideTransactionRepo(firestoreService: FirestoreService) : ITransactionRepository =
+        ITransactionRepositoryImpl(firestoreService) as ITransactionRepository
 
     @Provides
     fun provideTransactionUseCase(repo: ITransactionRepository) : TransactionUseCases =
         TransactionUseCases(
-            ucRecentTransactionUseCase = RecentTransactionUseCase(repo)
+            ucRecentTransactionUseCase = RecentTransactionUseCase(repo),
+            ucAddTransactionUseCase = AddTransactionUseCase(repo),
+            ucMonthlyTransactionUseCase = MonthlyTransactionUseCase(repo)
         )
 }

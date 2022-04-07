@@ -1,5 +1,7 @@
 package com.example.moneymanager.utilities
 
+import java.time.Month
+
 object Constants {
 
     const val USER_NOT_FOUND = "userNotFound"
@@ -27,4 +29,5 @@ object Constants {
     const val TRANSACTION_NAME = "t_name"
     const val TRANSACTION_TYPE = "t_type"
     const val TAGS = "tags"
+    const val Month = "month"
 }

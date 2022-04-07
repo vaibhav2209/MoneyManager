@@ -8,5 +8,6 @@ data class Transaction(
     val payment_method: String = "",
     val t_name: String = "",
     val t_type: String = "",
+    val month: String = "",
     val tags: List<String> = emptyList()
 )
