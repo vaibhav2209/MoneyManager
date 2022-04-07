@@ -13,18 +13,20 @@
         android:theme="@style/Theme.MoneyManager">
         <activity
             android:name=".module.home.presentation.activity.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".module.auth.presentation.activity.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".module.auth.presentation.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".module.auth.presentation.activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".module.auth.presentation.activity.LoginActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".MainActivity"

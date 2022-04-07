@@ -21,17 +21,17 @@ class AuthRepositoryImpl @Inject constructor(
         email: String,
         password: String
     ): Flow<FirebaseUser> = callbackFlow {
-        authFirebaseService.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-            it?.user?.let { user ->
-                trySend(user)
+        authFirebaseService.signInWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+                it?.user?.let { user ->
+                    trySend(user)
+                }
+            }.addOnFailureListener { e ->
+                cancel(
+                    message = e.message ?: "Unknown error occurred",
+                    cause = e.cause
+                )
             }
-
-        }.addOnFailureListener { e ->
-            cancel(
-                message = e.message ?: "Unknown error occurred",
-                cause = e.cause
-            )
-        }
         awaitClose { }
     }
 
