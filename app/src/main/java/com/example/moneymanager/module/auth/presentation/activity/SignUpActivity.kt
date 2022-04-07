@@ -16,7 +16,9 @@ import com.example.moneymanager.module.navigation.AppNavigationRoute
 import com.example.moneymanager.utilities.Resource
 import com.example.moneymanager.utilities.hideKeyBoard
 import com.example.moneymanager.utilities.isValidEmail
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding

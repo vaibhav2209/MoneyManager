@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManager">
         <activity
-            android:name=".module.home.HomeActivity"
+            android:name=".module.home.presentation.activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".module.auth.presentation.activity.SignUpActivity"

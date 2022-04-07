@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import com.example.moneymanager.module.auth.presentation.activity.LoginActivity
 import com.example.moneymanager.module.auth.presentation.activity.SignUpActivity
-import com.example.moneymanager.module.home.HomeActivity
+import com.example.moneymanager.module.home.presentation.activity.HomeActivity
 
 
 interface AppNavigationRoute {
