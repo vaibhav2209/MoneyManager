@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Money Manager</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="please_sign_in_to_your_account">Please sign in to your account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="or_login_with">Or, login with...</string>
+    <string name="new_to_expense_manager">New to Expense Manager?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="valid_email_address">Enter a valid email address</string>
+    <string name="password_should_be_at_least">Password should be at least 6 characters</string>
+    <string name="create_new_naccount">Create new\naccount</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="or_register_with">Or, Register with...</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="enter_username">Enter username</string>
+</resources>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".module.auth.presentation.activity.SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_naccount"
+            style="@style/TextAppearance.MM.SemiBold.Large" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/username"
+            app:hintTextAppearance="@style/TextAppearance.MM.Medium.Medium"
+            app:hintTextColor="@color/theme_grey4"
+            app:hintEnabled="true"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:errorTextColor="@color/theme_red"
+            app:errorTextAppearance="@style/TextAppearance.MM.Regular.Small"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxBackgroundColor="@color/theme_grey1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.MM.Medium.Medium"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/email"
+            app:hintTextAppearance="@style/TextAppearance.MM.Medium.Medium"
+            app:hintTextColor="@color/theme_grey4"
+            app:hintEnabled="true"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:errorTextColor="@color/theme_red"
+            app:errorIconTint="@color/theme_red"
+            app:errorTextAppearance="@style/TextAppearance.MM.Regular.Small"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxBackgroundColor="@color/theme_grey1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.MM.Medium.Medium"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/password"
+            app:hintTextAppearance="@style/TextAppearance.MM.Medium.Medium"
+            app:hintTextColor="@color/theme_grey4"
+            app:hintEnabled="true"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:errorTextColor="@color/theme_red"
+            app:errorTextAppearance="@style/TextAppearance.MM.Regular.Small"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxBackgroundColor="@color/theme_grey1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.MM.Medium.Medium"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_marginTop="48dp"
+            style="@style/MM.Button.Primary"
+            android:text="@string/register" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/or_register_with"
+            style="@style/TextAppearance.MM.Medium.Medium"
+            android:textColor="@color/theme_grey6"
+            android:gravity="center"
+            android:layout_marginTop="56dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/vg_google"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account"
+            android:layout_gravity="bottom"
+            android:textColor="@color/theme_grey6"
+            style="@style/TextAppearance.MM.Medium.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/Primary"
+            style="@style/TextAppearance.MM.Medium.Medium" />
+
+    </LinearLayout>
+
+</FrameLayout>

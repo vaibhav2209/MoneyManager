@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.MM.SemiBold.Large" parent="">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.SemiBold.Medium" parent="">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.SemiBold.Small" parent="">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.Medium.Large" parent="">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.Medium.Medium" parent="">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.Medium.Small" parent="">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.Regular.Small" parent="">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/theme_black</item>
+    </style>
+
+    <style name="TextAppearance.MM.Button" parent="">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/theme_white</item>
+    </style>
+
+    <style name="MM.TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox" >
+        <item name="hintTextAppearance">@style/TextAppearance.MM.Medium.Medium</item>
+        <item name="hintTextColor">@color/theme_grey4</item>
+        <item name="hintEnabled">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.MM.Medium.Medium</item>
+        <item name="android:textColor">@color/theme_black</item>
+        <item name="boxBackgroundColor">@color/theme_grey1</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="MM.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/TextAppearance.MM.Button</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+</resources>
