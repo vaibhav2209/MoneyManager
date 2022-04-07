@@ -8,5 +8,6 @@ data class User(
     val phone: String = "",
     val isEmailVerified: Boolean = false,
     val providerId: String = "",
-    val uId: String = ""
+    val uId: String = "",
+    val isLoggedIn: Boolean = false
 )

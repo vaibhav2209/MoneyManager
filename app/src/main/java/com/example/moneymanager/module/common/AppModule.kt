@@ -14,7 +14,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAppDataStore(
+    fun provideUserDataStore(
         @ApplicationContext context: Context
-    ) : AppDataStore = AppDataStore(context)
+    ) : UserDataStore = UserDataStore(context)
 }
